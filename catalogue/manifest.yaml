@@ -6,7 +6,7 @@ metadata:
   labels:
     component: catalogue
     project: roboshop
-    tier: database
+    tier: app
 data:
   MONGO: "true"
   MONGO_URL: "mongodb://mongodb:27017/catalogue"
@@ -22,7 +22,7 @@ metadata:
   labels:
     component: catalogue
     project: roboshop
-    tier: database
+    tier: app
 spec:
   replicas: 1
   # 2 replica set use to create pod
@@ -30,13 +30,13 @@ spec:
     matchLabels:
       component: catalogue
       project: roboshop
-      tier: database
+      tier: app
   template:
     metadata:
       labels:
         component: catalogue
         project: roboshop
-        tier: database
+        tier: app
     spec:
       containers:
         - name: catalogue
@@ -56,7 +56,7 @@ spec:
   selector:
     component: catalogue
     project: roboshop
-    tier: database
+    tier: app
   ports:
     - protocol: TCP
       port: 8080
