@@ -30,13 +30,13 @@ spec:
     matchLabels:
       component: catalogue
       project: roboshop
-      teir: database
+      tier: database
   template:
     metadata:
       labels:
         component: catalogue
         project: roboshop
-        teir: database
+        tier: database
     spec:
       containers:
         - name: catalogue
