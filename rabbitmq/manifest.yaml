@@ -43,6 +43,9 @@ spec:
       containers:
         - name: rabbitmq
           image: rabbitmq:3
+          envFrom:
+            - secretRef:
+                name: rabbitmq
 
   #---------------- service
 ---
@@ -51,6 +54,10 @@ kind: Service
 metadata:
   name: rabbitmq
   namespace: roboshop
+  labels:
+    component: rabbitmq
+    project: roboshop
+    tier: database
 spec:
   selector:
     component: rabbitmq

@@ -52,6 +52,10 @@ kind: Service
 metadata:
   name: catalogue
   namespace: roboshop
+  labels:
+    component: catalogue
+    project: roboshop
+    tier: app
 spec:
   selector:
     component: catalogue

@@ -35,6 +35,10 @@ kind: Service
 metadata:
   name: mongodb
   namespace: roboshop
+  labels:
+    component: mongodb
+    project: roboshop
+    tier: database
 spec:
   selector:
     component: mongodb

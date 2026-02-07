@@ -72,6 +72,10 @@ kind: Service
 metadata:
   name: payment
   namespace: roboshop
+  labels:
+    component: payment
+    project: roboshop
+    tier: app
 spec:
   selector:
     component: payment
