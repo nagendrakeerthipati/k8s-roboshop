@@ -102,15 +102,20 @@ spec:
       containers:
         - name: frontend
           image: joindevops/frontend:v1
+          volumeMounts:
+            - name: nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+              readOnly: true
           # envFrom:
           #   - configMapRef:
           #       name: frontend
       volumes:
         - name: nginx-conf
-          ConfigMap:
+          configMap:
             name: nginx-conf
             items:
-              - key: nginx.cof
+              - key: nginx.conf
                 path: nginx.conf
   #---------------- service
 ---
